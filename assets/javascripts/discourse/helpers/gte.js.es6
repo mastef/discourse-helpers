@@ -1,12 +1,5 @@
-import registerUnbound from 'discourse/helpers/register-unbound';
+import { registerUnbound } from 'discourse-common/lib/helpers';
 
-registerUnbound('gte', function(a, b, options) {
-  if (arguments.length === 2) {
-    options = b;
-    b = options.hash.compare;
-  }
-  if (a >= b) {
-    return options.fn(this);
-  }
-  return options.inverse(this);
+registerUnbound('gte', function(a, b) {
+	return (a >= b);
 });
