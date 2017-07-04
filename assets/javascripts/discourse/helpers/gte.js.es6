@@ -1,6 +1,6 @@
-import { registerHelper } from 'discourse-common/lib/helpers';
+import registerUnbound from 'discourse/helpers/register-unbound';
 
-registerHelper('gte', function(a, b, options) {
+registerUnbound('gte', function(a, b, options) {
   if (arguments.length === 2) {
     options = b;
     b = options.hash.compare;
